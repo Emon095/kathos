@@ -1,18 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SM Shahrier Emon | Cybersecurity Enthusiast & CTF Player</title>
-    <meta name="description" content="Portfolio of SM Shahrier Emon - CSE Undergraduate, Cybersecurity Enthusiast, CTF Player & Team Leader of Really Annoying Bots (RAB)" />
-    <meta name="keywords" content="cybersecurity, CTF, capture the flag, penetration testing, security researcher, Bangladesh" />
-    <meta name="author" content="SM Shahrier Emon" />
+    <meta name="description" content="Portfolio of SM Shahrier Emon - CSE Undergraduate, Cybersecurity Enthusiast, CTF Player & Team Leader of Really Annoying Bots (RAB)">
+    <meta name="keywords" content="cybersecurity, CTF, capture the flag, penetration testing, security researcher, Bangladesh">
+    <meta name="author" content="SM Shahrier Emon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Matrix Background Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Scanline Overlay -->
+    <div class="scanline-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">EMON</span>
+                <span class="logo-bracket">]</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#ctf" class="nav-link">CTF</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-command">whoami</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-bracket">&lt;</span>
+                        SM Shahrier Emon
+                        <span class="title-bracket">/&gt;</span>
+                    </h1>
+                    <div class="typewriter-container">
+                        <span id="typewriter" class="typewriter-text"></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <p class="hero-description">
+                        CSE Undergraduate | Security Researcher | CTF Team Leader
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <span class="btn-icon">📧</span>
+                            Get In Touch
+                        </a>
+                        <a href="#about" class="btn btn-secondary">
+                            <span class="btn-icon">📁</span>
+                            View Profile
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" data-count="15">0</span>+
+                            <span class="stat-label">CTF Competitions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" data-count="3">0</span>+
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" data-count="10">0</span>+
+                            <span class="stat-label">Team Members Led</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-frame">
+                        <div class="profile-glow"></div>
+                        <img src="https://i.postimg.cc/13pzSNy5/481199721-659089673353431-2188614059774239724-n.jpg" alt="SM Shahrier Emon" class="profile-photo">
+                        <div class="profile-ring"></div>
+                    </div>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Available for opportunities
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    About Me
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="section-divider"></div>
+                
+                <div class="about-content">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">about_emon.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">$</span> <span class="command">cat</span> profile.txt</p>
+                            <p class="output">
+                                I am a passionate <span class="highlight">Cybersecurity Enthusiast</span> and 
+                                <span class="highlight">CTF Player</span> from Bangladesh. Currently pursuing my 
+                                Bachelor's in Computer Science & Engineering at Bangladesh University of Professionals (BUP).
+                            </p>
+                            <p><span class="prompt">$</span> <span class="command">echo</span> $INTERESTS</p>
+                            <p class="output">
+                                Cryptography, Reverse Engineering, Pwn, Digital Forensics, Web Security
+                            </p>
+                            <p><span class="prompt">$</span> <span class="command">cat</span> mission.txt</p>
+                            <p class="output">
+                                As the <span class="highlight">Team Leader of Really Annoying Bots (RAB)</span>, 
+                                I lead a competitive CTF team, coordinating strategies and mentoring members across 
+                                multiple security domains. My goal is to contribute to the cybersecurity community 
+                                while continuously expanding my knowledge.
+                            </p>
+                            <p class="cursor-line"><span class="prompt">$</span> <span class="blink">_</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-info">
+                                <span class="stat-number" data-count="15">0</span>+
+                                <span class="stat-text">CTFs Played</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🚩</div>
+                            <div class="stat-info">
+                                <span class="stat-number" data-count="50">0</span>+
+                                <span class="stat-text">Flags Captured</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-info">
+                                <span class="stat-number" data-count="10">0</span>+
+                                <span class="stat-text">Team Members</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-info">
+                                <span class="stat-number" data-count="3">0</span>+
+                                <span class="stat-text">Years Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    Technical Skills
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="section-divider"></div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">🔐</span>
+                            Security Tools
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Burp Suite</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Wireshark</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Ghidra/IDA</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Nmap</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Metasploit</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">💻</span>
+                            Programming
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">C/C++</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Bash/Shell</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Assembly</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="60"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">🎯</span>
+                            CTF Categories
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Cryptography</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Reverse Engineering</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Pwn/Binary Exploitation</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Digital Forensics</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Web Exploitation</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">🖥️</span>
+                            Platforms
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Linux</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Kali Linux</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Git/GitHub</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">VirtualBox/VMware</span>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    Experience & Education
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="section-divider"></div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">👥</div>
+                            <h3 class="timeline-title">Team Leader</h3>
+                            <p class="timeline-org">Really Annoying Bots (RAB)</p>
+                            <div class="timeline-meta">
+                                <span>📅 2024 - Present</span>
+                                <span>📍 Bangladesh</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Leading and coordinating a competitive CTF team. Managing strategy development, 
+                                challenge distribution, and team mentoring across Cryptography, Reverse Engineering, 
+                                Pwn, and Digital Forensics categories.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">🎓</div>
+                            <h3 class="timeline-title">Bachelor of Science in CSE</h3>
+                            <p class="timeline-org">Bangladesh University of Professionals (BUP)</p>
+                            <div class="timeline-meta">
+                                <span>📅 2023 - Present</span>
+                                <span>📍 Bangladesh</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Undergraduate student in Computer Science and Engineering with focus on 
+                                cybersecurity, algorithms, and systems programming.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTF Achievements Section -->
+        <section id="achievements" class="achievements-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    CTF Achievements
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="section-divider"></div>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-card gold">
+                        <div class="achievement-position">🥇</div>
+                        <div class="achievement-info">
+                            <h3>Knight CTF 2025</h3>
+                            <span class="achievement-badge">1st Place</span>
+                            <p>National CTF Competition organized by Knight Squad</p>
+                            <div class="achievement-stats">
+                                <span><strong class="counter" data-count="5000">0</strong> pts</span>
+                                <span><strong class="counter" data-count="200">0</strong>+ teams</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card silver">
+                        <div class="achievement-position">🥈</div>
+                        <div class="achievement-info">
+                            <h3>BUET CTF 2024</h3>
+                            <span class="achievement-badge">2nd Place</span>
+                            <p>Inter-University CTF hosted by BUET</p>
+                            <div class="achievement-stats">
+                                <span><strong class="counter" data-count="4500">0</strong> pts</span>
+                                <span><strong class="counter" data-count="150">0</strong>+ teams</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card bronze">
+                        <div class="achievement-position">🥉</div>
+                        <div class="achievement-info">
+                            <h3>CyberSEC CTF 2024</h3>
+                            <span class="achievement-badge">3rd Place</span>
+                            <p>Regional Cybersecurity Competition</p>
+                            <div class="achievement-stats">
+                                <span><strong class="counter" data-count="3800">0</strong> pts</span>
+                                <span><strong class="counter" data-count="100">0</strong>+ teams</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card top10">
+                        <div class="achievement-position">🏅</div>
+                        <div class="achievement-info">
+                            <h3>picoCTF 2024</h3>
+                            <span class="achievement-badge">Top 10%</span>
+                            <p>Global CTF for students worldwide</p>
+                            <div class="achievement-stats">
+                                <span><strong class="counter" data-count="3200">0</strong> pts</span>
+                                <span><strong class="counter" data-count="10000">0</strong>+ teams</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTF Profile Section -->
+        <section id="ctf" class="ctf-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    🚩 CTF Profile
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="section-divider"></div>
+                
+                <div class="ctf-content">
+                    <a href="https://ctftime.org/team/372428" target="_blank" rel="noopener noreferrer" class="ctftime-link">
+                        <div class="ctftime-card">
+                            <div class="ctftime-icon">🏴</div>
+                            <div class="ctftime-info">
+                                <h3>CTFtime Profile</h3>
+                                <p>View our team's official CTFtime profile, rankings, and competition history</p>
+                            </div>
+                            <span class="external-link">↗</span>
+                        </div>
+                    </a>
+                    
+                    <div class="ctf-categories">
+                        <div class="category-card">
+                            <div class="category-icon">🔐</div>
+                            <h4>Cryptography</h4>
+                            <p>Breaking ciphers, analyzing encryption algorithms, and solving mathematical puzzles</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">⚙️</div>
+                            <h4>Reverse Engineering</h4>
+                            <p>Analyzing binaries, understanding malware, and decompiling executables</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">💥</div>
+                            <h4>Pwn / Binary Exploitation</h4>
+                            <p>Buffer overflows, ROP chains, and exploiting memory vulnerabilities</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">🔍</div>
+                            <h4>Digital Forensics</h4>
+                            <p>Analyzing disk images, memory dumps, and recovering hidden data</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-bg"></div>
+                        <div class="team-content">
+                            <h3>Our Team</h3>
+                            <div class="team-name">
+                                <span class="team-abbr">RAB</span>
+                            </div>
+                            <p class="team-full">Really Annoying Bots</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    Get In Touch
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="section-divider"></div>
+                
+                <div class="contact-content">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>📧</span> Send Message
+                        </button>
+                    </form>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:shahrieremon.ctf@gmail.com" class="contact-card">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-info">
+                                <h4>Email</h4>
+                                <p>shahrieremon.ctf@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/SH-Emon" target="_blank" rel="noopener noreferrer" class="contact-card">
+                            <span class="contact-icon">💻</span>
+                            <div class="contact-info">
+                                <h4>GitHub</h4>
+                                <p>@SH-Emon</p>
+                            </div>
+                        </a>
+                        <a href="https://facebook.com/sh.emon.ctf" target="_blank" rel="noopener noreferrer" class="contact-card">
+                            <span class="contact-icon">👤</span>
+                            <div class="contact-info">
+                                <h4>Facebook</h4>
+                                <p>@sh.emon.ctf</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="bracket">[</span>
+                    <span class="logo-text">EMON</span>
+                    <span class="bracket">]</span>
+                </div>
+                <p class="footer-text">
+                    &lt;/&gt; with ❤️ by SM Shahrier Emon
+                </p>
+                <p class="footer-copyright">
+                    © 2025 All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
